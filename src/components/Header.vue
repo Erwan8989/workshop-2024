@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 
 <template>
   <header class="px-10 py-3 w-full flex items-center justify-between shadow mb-5">
-    <img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="70" height="70" />
+    <img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85" height="85" />
     <nav>
       <ul class="flex space-x-8">
         <li>
