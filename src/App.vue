@@ -4,9 +4,11 @@ import Container from './components/Container.vue';
 </script>
 
 <template>
-  <Container>
-    <RouterView />
-  </Container>
+  <router-view v-slot="{ Component }">
+    <container>
+      <component :is="Component" />
+    </container>
+  </router-view>
 </template>
 
 <style scoped>

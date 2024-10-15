@@ -4,7 +4,7 @@
 
 <template>
   <Header />
-  <div class="container flex flex-col">
+  <div class="container flex flex-col py-5">
     <slot></slot>
   </div>
 </template>
