@@ -1,6 +1,7 @@
 {
   "questions": [
     {
+      "id": 1,
       "question": "Est-ce qu’on t’insulte/se moque de toi ?",
       "options": [
         { "response": "Non, jamais", "points": 0 },
@@ -9,6 +10,7 @@
       ]
     },
     {
+      "id": 2,
       "question": "Reçois-tu des messages menaçants ?",
       "options": [
         { "response": "Non, jamais", "points": 0 },
@@ -17,6 +19,7 @@
       ]
     },
     {
+      "id": 3,
       "question": "Des photos intimes de toi ont-elles déjà été diffusées sur les réseaux sociaux sans ton consentement ?",
       "options": [
         { "response": "Oui", "points": 6 },
@@ -24,6 +27,7 @@
       ]
     },
     {
+      "id": 4,
       "question": "Es-tu au courant que des photos/messages circulent sur toi sans ton accord ?",
       "options": [
         { "response": "Oui", "points": 4 },
@@ -31,6 +35,7 @@
       ]
     },
     {
+      "id": 5,
       "question": "Es-tu victime d’insultes à caractère sexuel ?",
       "options": [
         { "response": "Non", "points": 0 },
@@ -39,6 +44,7 @@
       ]
     },
     {
+      "id": 6,
       "question": "As-tu du mal à t’endormir, te réveilles-tu la nuit, fais-tu des cauchemars ?",
       "options": [
         { "response": "Non, jamais", "points": 0 },
@@ -47,6 +53,7 @@
       ]
     },
     {
+      "id": 7,
       "question": "Est-ce qu’une personne suit toutes tes actions sur les réseaux ?",
       "options": [
         { "response": "Oui", "points": 5 },
@@ -54,6 +61,7 @@
       ]
     },
     {
+      "id": 8,
       "question": "As-tu déjà reçu des menaces de mort ?",
       "options": [
         { "response": "Oui", "points": 7 },
@@ -61,6 +69,7 @@
       ]
     },
     {
+      "id": 9,
       "question": "T'a-t-on déjà fait du chantage sur internet ?",
       "options": [
         { "response": "Oui", "points": 6 },
@@ -70,27 +79,33 @@
   ],
   "score_ranges": [
     {
-      "range": "0-6",
+      "minScore": 0,
+      "maxScore": 6,
       "description": "Tu sembles ne pas être victime de harcèlement. Si tu connais un ami qui a besoin d'aide, n'hésite pas à lui communiquer les liens ci-dessous."
     },
     {
-      "range": "7-13",
+      "minScore": 7,
+      "maxScore": 13,
       "description": "Tu sembles vivre des situations parfois difficiles dont tu pourrais parler à une personne de confiance pour être aidé. Si tu ne sais pas à qui en parler ou si c'est difficile de le faire, consulte les liens ci-dessous."
     },
     {
-      "range": "14-20",
+      "minScore": 14,
+      "maxScore": 20,
       "description": "Tu évoques des situations de harcèlement dont tu es victime et qui doivent cesser. Pour t'aider, consulte les liens ci-dessous."
     },
     {
-      "range": "21-27",
+      "minScore": 21,
+      "maxScore": 27,
       "description": "Tu es manifestement victime de harcèlement. Tu as besoin d'aide pour faire rapidement cesser ces situations. Le harcèlement est puni par la loi. Pour t'aider, prends connaissance des liens ci-dessous."
     },
     {
-      "range": "28-33",
+      "minScore": 28,
+      "maxScore": 33,
       "description": "Ce que tu subis est inacceptable. Pour t'aider, consulte les liens ci-dessous."
     },
     {
-      "range": "34+",
+      "minScore": 34,
+      "maxScore": 40,
       "description": "Tu as bien fait de réaliser ce questionnaire car ta situation est grave ! Ce que tu subis est inacceptable. Pour t'aider, consulte les liens ci-dessous."
     }
   ]
