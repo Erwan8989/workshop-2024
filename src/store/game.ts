@@ -1,13 +1,6 @@
 import { defineStore } from 'pinia'
 import data from "../data.json";
 
-type GameStore = {
-  data: typeof data;
-  started: boolean;
-  index: number;
-  answers: string[];
-}
-
 export type Answer = Pick<typeof data.questions[0], 'options'>["options"][number];
 
 export type Range = typeof data.score_ranges[0]
