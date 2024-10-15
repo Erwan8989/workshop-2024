@@ -10,25 +10,25 @@
   "icons": [
     {
       "src": "./img/icon.png",
-      "sizes": "192x192",
+      "sizes": "502x529",
       "type": "image/png"
     },
     {
       "src": "./img/icon.png",
-      "sizes": "512x512",
+      "sizes": "502x529",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
       "src": "./img/icon.png",
-      "sizes": "1280x720",
+      "sizes": "502x529",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
       "src": "./img/icon.png",
-      "sizes": "720x1280",
+      "sizes": "502x529",
       "type": "image/png"
     }
   ]
