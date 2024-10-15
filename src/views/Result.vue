@@ -4,6 +4,7 @@
   import Loading from 'vue-loading-overlay';
   import 'vue-loading-overlay/dist/css/index.css';
 import Card from "../components/ui/card/Card.vue";
+import Button from "../components/ui/button/Button.vue";
 
   const store = useGameStore();
 
@@ -38,5 +39,23 @@ import Card from "../components/ui/card/Card.vue";
     </p>
     
     <p>{{ result }}</p>
+
+    
+    <div class="inline-flex items-center gap-5 my-5 mx-auto">
+      <a href="tel:3018">
+        <Button variant="default">
+          Appeler le 3018
+        </Button>
+      </a>
+      <a 
+        href="https://www.service-public.fr/particuliers/vosdroits/F32239" 
+        target="_blank" 
+        ref="noopener noreferrer"
+      >
+        <Button variant="outline">
+          Ressources gouvernementales
+        </Button>
+      </a>
+    </div>
   </Card>
 </template>

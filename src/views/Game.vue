@@ -37,11 +37,17 @@
   </Card>
 
   <template v-else>
+    <Card class="p-5 flex flex-col gap-5 items-center justify-center">
+      <p>
+        Le test est terminé. Nous allons compiler les résultats pour vous. Veuillez terminer le test.
+      </p>
+      
     <RouterLink to="/result">
       <Button>
         Terminer le test
       </Button>
     </RouterLink>
+    </Card>
   </template>
 
   <pre>
