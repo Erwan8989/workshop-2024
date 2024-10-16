@@ -11,5 +11,8 @@ import Container from './components/Container.vue';
   </router-view>
 </template>
 
-<style scoped>
+<style>
+.dyslexic-mode {
+  font-family: 'OpenDyslexic', sans-serif;
+}
 </style>
