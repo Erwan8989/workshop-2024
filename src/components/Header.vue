@@ -24,10 +24,10 @@ const setColorblindMode = () => {
 </script>
 
 <template>
-  <header class="px-10 py-3 w-full flex items-center justify-between shadow mb-5">
+  <header class="px-4 py-3 w-full flex items-center justify-between shadow mb-5 md:px-10">
     <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85" height="85"/></RouterLink>
     <nav>
-      <ul class="flex space-x-8">
+      <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
         <li>
           <a href="tel:3018">
             <Button variant="default" style="background-color: green">
