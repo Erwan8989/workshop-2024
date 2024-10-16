@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-import {RouterLink} from 'vue-router';
+import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 import Button from "./ui/button/Button.vue";
-import {toggleDyslexicMode} from '../store/dyslexicMode';
+import { toggleDyslexicMode } from '../store/dyslexicMode';
 
 const selectedMode = ref('');
 const dropdownVisible = ref(false);
@@ -22,29 +22,27 @@ const setColorblindMode = () => {
   dropdownVisible.value = false;
 };
 
-import type {DropdownMenuCheckboxItemProps} from 'radix-vue'
+import type { DropdownMenuCheckboxItemProps } from 'radix-vue';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu'
+} from './ui/dropdown-menu';
 
-type Checked = DropdownMenuCheckboxItemProps['checked']
+type Checked = DropdownMenuCheckboxItemProps['checked'];
 
-const showStatusBar = ref<Checked>(false)
-const showActivityBar = ref<Checked>(false)
+const showStatusBar = ref<Checked>(false);
+const showActivityBar = ref<Checked>(false);
 </script>
 
 <template>
   <header class="px-4 py-3 w-full flex items-center justify-between shadow mb-5 md:px-10">
-    <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85"
-                            height="85"/></RouterLink>
-    <nav>
+    <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85" height="85"/></RouterLink>
+    <nav class="hidden md:flex space-x-8">
       <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
         <li>
-          <a href="https://www.service-public.fr/particuliers/vosdroits/F32239" target="_blank"
-             ref="noopener noreferrer">
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F32239" target="_blank" ref="noopener noreferrer">
             <Button variant="link">
               Ressources gouvernementales
             </Button>
@@ -58,16 +56,10 @@ const showActivityBar = ref<Checked>(false)
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent class="w-56">
-              <DropdownMenuCheckboxItem
-                  @click="setColorblindMode"
-                  v-model:checked="showActivityBar"
-              >
+              <DropdownMenuCheckboxItem @click="setColorblindMode" v-model:checked="showActivityBar">
                 Mode Daltonien
               </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem
-                  @click="toggleDyslexicMode"
-                  v-model:checked="showStatusBar"
-              >
+              <DropdownMenuCheckboxItem @click="toggleDyslexicMode" v-model:checked="showStatusBar">
                 Mode Dyslexique
               </DropdownMenuCheckboxItem>
             </DropdownMenuContent>
@@ -82,6 +74,35 @@ const showActivityBar = ref<Checked>(false)
         </li>
       </ul>
     </nav>
+    <div class="md:hidden">
+      <DropdownMenu>
+        <DropdownMenuTrigger as-child>
+          <button>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent class="w-56">
+          <DropdownMenuCheckboxItem>
+            <RouterLink to="https://www.service-public.fr/particuliers/vosdroits/F32239" target="_blank" ref="noopener noreferrer">
+              Ressources gouvernementales
+            </RouterLink>
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem>
+            <a href="tel:3018">
+              Appeler le 3018
+            </a>
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem @click="setColorblindMode" v-model:checked="showActivityBar">
+            Mode Daltonien
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem @click="toggleDyslexicMode" v-model:checked="showStatusBar">
+            Mode Dyslexique
+          </DropdownMenuCheckboxItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   </header>
 </template>
 
