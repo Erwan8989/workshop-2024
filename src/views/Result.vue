@@ -29,7 +29,7 @@ import Button from "../components/ui/button/Button.vue";
   <div v-if="isLoading" class="w-full flex items-center justify-center">
     <loading :active="isLoading" />
     <h1 class="text-3xl font-bold">
-      Calcul des résultats par IA...
+      Calcul des résultats en cours...
     </h1>
   </div>
   <Card v-else class="p-5">
