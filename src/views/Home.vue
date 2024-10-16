@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import { Button } from '../components/ui/button';
+import {RouterLink} from 'vue-router';
+import {Button} from '../components/ui/button';
 
 </script>
 
 <template>
   <div class="h-[600px] bg">
     <div class="w-full h-[400px] bg-backgound flex flex-col items-center justify-center gap-4">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non aliquam massa, id mattis nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean in orci eu felis auctor volutpat ac a ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut porta lacinia fringilla. Vivamus mollis mauris a orci elementum vulputate. Cras ac faucibus nibh. Praesent nibh felis, malesuada in justo a, scelerisque dapibus velit. Suspendisse posuere vel nibh vitae vehicula. Curabitur consequat vulputate viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec a dapibus lorem, sit amet pretium nulla. Suspendisse aliquet tellus vel lorem ultrices malesuada. Suspendisse finibus non orci eget placerat. Integer non tortor enim. 
-    </p>
-    <RouterLink to="/game">
-      <Button>
-        Faire le test
-      </Button>
-    </RouterLink>
-  </div>
+      <p>
+        Ce questionnaire vous permet de signaler des situations de harcèlement sur les réseaux sociaux de manière
+        confidentielle. En le remplissant, vous aidez à identifier les comportements abusifs et à agir rapidement pour
+        les stopper. Votre contribution est essentielle pour renforcer la sécurité en ligne et protéger les utilisateurs
+        contre les abus. Merci de prendre le temps de répondre, cela contribue à un environnement plus sûr pour tous.
+      </p>
+      <RouterLink to="/game">
+        <Button>
+          Faire le test
+        </Button>
+      </RouterLink>
+    </div>
   </div>
 </template>
 
