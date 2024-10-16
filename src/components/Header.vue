@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import {ref} from 'vue';
+import {RouterLink} from 'vue-router';
 import Button from "./ui/button/Button.vue";
-import { toggleDyslexicMode } from '../store/dyslexicMode';
+import {toggleDyslexicMode} from '../store/dyslexicMode';
 
 const selectedMode = ref('');
 const dropdownVisible = ref(false);
@@ -21,39 +21,64 @@ const setColorblindMode = () => {
   document.body.classList.remove('dyslexic-mode');
   dropdownVisible.value = false;
 };
+
+import type {DropdownMenuCheckboxItemProps} from 'radix-vue'
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
+
+type Checked = DropdownMenuCheckboxItemProps['checked']
+
+const showStatusBar = ref<Checked>(false)
+const showActivityBar = ref<Checked>(false)
 </script>
 
 <template>
   <header class="px-4 py-3 w-full flex items-center justify-between shadow mb-5 md:px-10">
-    <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85" height="85"/></RouterLink>
+    <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85"
+                            height="85"/></RouterLink>
     <nav>
       <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+        <li>
+          <a href="https://www.service-public.fr/particuliers/vosdroits/F32239" target="_blank"
+             ref="noopener noreferrer">
+            <Button variant="link">
+              Ressources gouvernementales
+            </Button>
+          </a>
+        </li>
+        <li class="relative" @mouseenter="showDropdown" @mouseleave="hideDropdown">
+          <DropdownMenu>
+            <DropdownMenuTrigger as-child>
+              <Button variant="outline">
+                Accessibilité
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent class="w-56">
+              <DropdownMenuCheckboxItem
+                  @click="setColorblindMode"
+                  v-model:checked="showActivityBar"
+              >
+                Mode Daltonien
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem
+                  @click="toggleDyslexicMode"
+                  v-model:checked="showStatusBar"
+              >
+                Mode Dyslexique
+              </DropdownMenuCheckboxItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
         <li>
           <a href="tel:3018">
             <Button variant="default" style="background-color: green">
               Appeler le 3018
             </Button>
           </a>
-        </li>
-        <li>
-          <a href="https://www.service-public.fr/particuliers/vosdroits/F32239" target="_blank" ref="noopener noreferrer">
-            <Button variant="default">
-              Ressources gouvernementales
-            </Button>
-          </a>
-        </li>
-        <li class="relative" @mouseenter="showDropdown" @mouseleave="hideDropdown">
-          <Button variant="default">
-            Accessibilité
-          </Button>
-          <div v-if="dropdownVisible" class="dropdown-menu">
-            <Button variant="default" @click="setColorblindMode">
-              Mode Daltonien
-            </Button>
-            <Button variant="default" @click="toggleDyslexicMode">
-              Mode Dyslexique
-            </Button>
-          </div>
         </li>
       </ul>
     </nav>
