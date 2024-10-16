@@ -32,11 +32,6 @@ import Button from "../components/ui/button/Button.vue";
     </h1>
   </div>
   <div v-else class="p-5">
-    <p class="font-bold">
-      <!-- Votre score est de {{ store.score }}. Voici le résultat selon notre barême. -->
-       Selon notre IA HarcelAI,
-    </p>
-
     <p>{{ result }}</p>
 
 
