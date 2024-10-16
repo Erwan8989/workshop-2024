@@ -8,10 +8,14 @@ import {Button} from '../components/ui/button';
   <div class="h-[600px] bg">
     <div class="w-full h-[400px] bg-backgound flex flex-col items-center justify-center gap-4">
       <p class="text-justify" style="font-weight: bold">
-        Ce questionnaire vous permet de signaler des situations de harcèlement sur les réseaux sociaux de manière
-        confidentielle. En le remplissant, vous aidez à identifier les comportements abusifs et à agir rapidement pour
-        les stopper. Votre contribution est essentielle pour renforcer la sécurité en ligne et protéger les utilisateurs
-        contre les abus. Merci de prendre le temps de répondre, cela contribue à un environnement plus sûr pour tous.
+        Bienvenue sur notre plateforme dédiée à la lutte contre le harcèlement en ligne des jeunes<br><br>
+
+        Le harcèlement en ligne touche de nombreux jeunes et peut avoir de graves conséquences. Pour mieux comprendre
+        cette réalité et y apporter des solutions, nous vous proposons un questionnaire de positionnement. En y
+        répondant, vous pourrez évaluer votre perception du phénomène et accéder à des ressources personnalisées pour
+        agir. Ensemble, faisons la différence et créons un espace numérique plus sûr pour les jeunes.<br><br>
+
+        Participez dès maintenant et découvrez comment vous pouvez contribuer !
       </p>
       <RouterLink to="/game">
         <Button>
