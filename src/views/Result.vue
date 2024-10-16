@@ -3,7 +3,6 @@
   import { useGameStore } from "../store/game";
   import Loading from 'vue-loading-overlay';
   import 'vue-loading-overlay/dist/css/index.css';
-import Card from "../components/ui/card/Card.vue";
 import Button from "../components/ui/button/Button.vue";
 
   const store = useGameStore();
@@ -32,24 +31,24 @@ import Button from "../components/ui/button/Button.vue";
       Calcul des résultats en cours...
     </h1>
   </div>
-  <Card v-else class="p-5">
+  <div v-else class="p-5">
     <p class="font-bold">
       <!-- Votre score est de {{ store.score }}. Voici le résultat selon notre barême. -->
-       Selon notre IA HarcelAI, 
+       Selon notre IA HarcelAI,
     </p>
-    
+
     <p>{{ result }}</p>
 
-    
+
     <div class="inline-flex items-center gap-5 my-5 mx-auto">
       <a href="tel:3018">
-        <Button variant="default">
+        <Button variant="default" style="background-color: green">
           Appeler le 3018
         </Button>
       </a>
-      <a 
-        href="https://www.service-public.fr/particuliers/vosdroits/F32239" 
-        target="_blank" 
+      <a
+        href="https://www.service-public.fr/particuliers/vosdroits/F32239"
+        target="_blank"
         ref="noopener noreferrer"
       >
         <Button variant="outline">
@@ -57,5 +56,5 @@ import Button from "../components/ui/button/Button.vue";
         </Button>
       </a>
     </div>
-  </Card>
+  </div>
 </template>

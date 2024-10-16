@@ -4,7 +4,6 @@ import { RouterLink } from 'vue-router';
 import Button from "./ui/button/Button.vue";
 import { toggleDyslexicMode } from '../store/dyslexicMode';
 
-const selectedMode = ref('');
 const dropdownVisible = ref(false);
 
 const showDropdown = () => {
@@ -12,13 +11,6 @@ const showDropdown = () => {
 };
 
 const hideDropdown = () => {
-  dropdownVisible.value = false;
-};
-
-const setColorblindMode = () => {
-  selectedMode.value = 'colorblind';
-  document.body.classList.add('colorblind-mode');
-  document.body.classList.remove('dyslexic-mode');
   dropdownVisible.value = false;
 };
 
@@ -33,11 +25,10 @@ import {
 type Checked = DropdownMenuCheckboxItemProps['checked'];
 
 const showStatusBar = ref<Checked>(false);
-const showActivityBar = ref<Checked>(false);
 </script>
 
 <template>
-  <header class="px-4 py-3 w-full flex items-center justify-between shadow mb-5 md:px-10">
+  <header class="px-4 py-3 w-full flex items-center justify-between shadow mb-5 md:px-10 bg-gray-100">
     <RouterLink to="/"><img alt="amI Logo, meilleure app d'europe" class="logo vue" src="/img/logo.png" width="85" height="85"/></RouterLink>
     <nav class="hidden md:flex space-x-8">
       <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
@@ -56,9 +47,6 @@ const showActivityBar = ref<Checked>(false);
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent class="w-56">
-              <DropdownMenuCheckboxItem @click="setColorblindMode" v-model:checked="showActivityBar">
-                Mode Daltonien
-              </DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem @click="toggleDyslexicMode" v-model:checked="showStatusBar">
                 Mode Dyslexique
               </DropdownMenuCheckboxItem>
@@ -93,9 +81,6 @@ const showActivityBar = ref<Checked>(false);
             <a href="tel:3018">
               Appeler le 3018
             </a>
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem @click="setColorblindMode" v-model:checked="showActivityBar">
-            Mode Daltonien
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem @click="toggleDyslexicMode" v-model:checked="showStatusBar">
             Mode Dyslexique

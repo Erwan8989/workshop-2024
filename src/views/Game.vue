@@ -1,14 +1,13 @@
 <script setup lang="ts">
   import { RouterLink } from "vue-router";
   import { Button } from "../components/ui/button";
-  import { Card } from "../components/ui/card";
   import { useGameStore } from "../store/game";
 
   const store = useGameStore();
 </script>
 
 <template>
-  <Card v-if="store.state === 'idle'" class="p-5 flex flex-col gap-5 items-center justify-center">
+  <div v-if="store.state === 'idle'" class="p-5 flex flex-col gap-5 items-center justify-center">
     <p>
       Certaines personnes ne se rendent pas forcément compte qu'elles sont victimes de harcèlement. 
       C'est pourquoi il est important de savoir ce qu'est le harcèlement et de pouvoir le reconnaître.
@@ -17,8 +16,8 @@
     <Button @click="store.startGame()">
       Commencer le test
     </Button>
-  </Card>
-  <Card v-else-if="store.state === 'started'" class="p-5 flex flex-col gap-5 items-center justify-center">
+  </div>
+  <div v-else-if="store.state === 'started'" class="p-5 flex flex-col gap-5 items-center justify-center">
     <p>
       Question {{ store.index + 1 }} / {{ store.data.questions.length }}
     </p>
@@ -34,10 +33,10 @@
         {{ answer.response }}
       </Button>
     </div>
-  </Card>
+  </div>
 
   <template v-else>
-    <Card class="p-5 flex flex-col gap-5 items-center justify-center">
+    <div class="p-5 flex flex-col gap-5 items-center justify-center">
       <p>
         Le test est terminé. Nous allons compiler les résultats pour vous. Veuillez terminer le test.
       </p>
@@ -47,10 +46,6 @@
         Terminer le test
       </Button>
     </RouterLink>
-    </Card>
+    </div>
   </template>
-
-  <pre>
-    {{ JSON.stringify(store.answers, null, 2) }}
-  </pre>
 </template>

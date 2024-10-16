@@ -7,7 +7,7 @@ import {Button} from '../components/ui/button';
 <template>
   <div class="h-[600px] bg">
     <div class="w-full h-[400px] bg-backgound flex flex-col items-center justify-center gap-4">
-      <p class="text-justify">
+      <p class="text-justify" style="font-weight: bold">
         Ce questionnaire vous permet de signaler des situations de harcèlement sur les réseaux sociaux de manière
         confidentielle. En le remplissant, vous aidez à identifier les comportements abusifs et à agir rapidement pour
         les stopper. Votre contribution est essentielle pour renforcer la sécurité en ligne et protéger les utilisateurs
