@@ -6,7 +6,7 @@ import {Button} from '../components/ui/button';
 
 <template>
   <div class="h-[600px] bg">
-    <div class="w-full h-[400px] bg-backgound flex flex-col items-center justify-center gap-4">
+    <div class="w-full h-[500px] bg-backgound flex flex-col items-center justify-center gap-4">
       <p class="text-justify" style="font-weight: bold">
         Bienvenue sur notre plateforme dédiée à la lutte contre le harcèlement en ligne des jeunes<br><br>
 
